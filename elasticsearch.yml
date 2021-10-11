@@ -1,0 +1,18 @@
+---
+network:
+  host: 0.0.0.0
+xpack:
+  security:
+    audit:
+      enabled: true
+    enabled: true
+    transport:
+      ssl:
+        enabled: true
+        keystore:
+          path: elastic-certificates.p12
+          type: PKCS12
+        truststore:
+          path: elastic-certificates.p12
+          type: PKCS12
+        verification_mode: certificate
