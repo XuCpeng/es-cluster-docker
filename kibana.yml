@@ -1,6 +1,12 @@
 ---
 elasticsearch:
+  password: TlDSvLg9SFd0tqr5iRNR
+  ssl:
+    certificateAuthorities: ${CERTS_DIR}/ca/ca.crt
   username: kibana_system
-  password: 123456
 server:
   host: 0.0.0.0
+  ssl:
+    certificate: ${CERTS_DIR}/${NODE_NAME}/${NODE_NAME}.crt
+    enabled: 'true'
+    key: ${CERTS_DIR}/${NODE_NAME}/${NODE_NAME}.key

@@ -1,18 +1,27 @@
----
-network:
-  host: 0.0.0.0
+cluster:
+  name: es-docker-cluster
 xpack:
   security:
-    audit:
-      enabled: true
-    enabled: true
     transport:
       ssl:
-        enabled: true
-        keystore:
-          path: elastic-certificates.p12
-          type: PKCS12
-        truststore:
-          path: elastic-certificates.p12
-          type: PKCS12
+        key: ${CERTS_DIR}/${NODE_NAME}/${NODE_NAME}.key
+        certificate: ${CERTS_DIR}/${NODE_NAME}/${NODE_NAME}.crt
+        certificate_authorities: ${CERTS_DIR}/ca/ca.crt
         verification_mode: certificate
+        enabled: "true"
+    http:
+      ssl:
+        key: ${CERTS_DIR}/${NODE_NAME}/${NODE_NAME}.key
+        certificate: ${CERTS_DIR}/${NODE_NAME}/${NODE_NAME}.crt
+        enabled: "true"
+        certificate_authorities: ${CERTS_DIR}/ca/ca.crt
+    enabled: "true"
+  license:
+    self_generated:
+      type: trial
+bootstrap:
+  memory_lock: "true"
+node:
+  name: ${NODE_NAME}
+network:
+  host: 0.0.0.0
