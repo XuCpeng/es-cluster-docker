@@ -1,6 +1,6 @@
 ---
 elasticsearch:
-  password: TlDSvLg9SFd0tqr5iRNR
+  password: fhUJPfrhhn2K2EF6IHR8
   ssl:
     certificateAuthorities: ${CERTS_DIR}/ca/ca.crt
   username: kibana_system
