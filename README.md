@@ -23,3 +23,9 @@ $ docker-compose -f ./elastic-docker-tls.yml up kib01 -d
 ```bash
 docker-compose -f ./elastic-docker-tls.yml up -d
 ```
+
+if you need certs:
+
+```bash
+docker cp es01:/usr/share/elasticsearch/config/certificates/bundle.zip .
+```
