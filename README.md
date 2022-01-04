@@ -21,6 +21,7 @@ $ docker-compose -f ./elastic-docker-tls.yml up kib01 -d
 如果启动失败，可能需要配置系统参数vm.max_map_count：
 
 立即生效，重启失效：
+
 ```
 sysctl -w vm.max_map_count=262144
 ```
